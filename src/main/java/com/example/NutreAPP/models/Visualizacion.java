@@ -1,6 +1,7 @@
 package com.example.NutreAPP.models;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Visualizacion {
     private UUID id;    

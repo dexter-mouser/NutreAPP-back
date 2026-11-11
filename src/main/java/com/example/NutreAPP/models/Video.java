@@ -1,5 +1,7 @@
 package com.example.NutreAPP.models;
 
+import java.util.UUID;
+
 import com.example.NutreAPP.models.helpers.Categoria;
 
 public class Video {

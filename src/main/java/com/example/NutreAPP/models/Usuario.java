@@ -1,15 +1,41 @@
 package com.example.NutreAPP.models;
 
+import java.util.UUID;
+
 import com.example.NutreAPP.models.helpers.Departamentos;
 import com.example.NutreAPP.models.helpers.Rol;
 
-public class Usuario {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table (name = "usuarios")
+public class Usuario {
+    @Id 
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Column (name = "nombre", nullable = false , unique = false , length = 100)
     private String nombre;
+
+    @Column (name = "correo", nullable = false , unique = true , length = 80)
     private String correo;
+
+    @Enumerated (EnumType.STRING)
+    @Column (name = "departamentos", nullable = false , unique = false , length = 20)
     private Departamentos departamentos;
+
+    @Enumerated (EnumType.STRING)
+    @Column (name = "rol", nullable = false , unique = false , length = 20)
     private Rol rol;
+
+    @Column (name = "contrasena_hash", nullable = false , unique = false)
     private String contrasena_hash;
     //
     public Usuario() {
