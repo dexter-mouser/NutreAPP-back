@@ -1,8 +1,10 @@
 package com.example.NutreAPP.models;
 
+import java.util.List;
 import java.util.UUID;
 
 import com.example.NutreAPP.models.helpers.Categoria;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,6 +35,10 @@ public class Video {
     @Enumerated (EnumType.STRING)
     @Column (name = "categoria", nullable = false , unique = false , length = 30)
     private Categoria categoria;
+    //
+    @ManyToOne
+    @JsonManagedReference(value = "video-visualizacion")
+    private List<Visualizacion> Visualizaciones;
     //
     public Video() {
     }

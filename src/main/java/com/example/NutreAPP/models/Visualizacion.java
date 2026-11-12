@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +23,13 @@ public class Visualizacion {
 
     @Column (name = "completado", nullable = false , unique = false)
     private Boolean completado;
+    //Creando una relación.
+    @ManyToOne
+    @JoinColumn (name = "id")
+    @JsonBackReference(value = "usuario-visualizacion")
+    @JasonBackReference(value = "video-visualizacion")
+    private Usuario usuario;
+    private Video video;
     //
     public Visualizacion() {
     }
