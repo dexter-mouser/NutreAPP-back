@@ -27,7 +27,7 @@ public class Visualizacion {
     @ManyToOne
     @JoinColumn (name = "id")
     @JsonBackReference(value = "usuario-visualizacion")
-    @JasonBackReference(value = "video-visualizacion")
+    @JsonBackReference(value = "video-visualizacion")
     private Usuario usuario;
     private Video video;
     //
