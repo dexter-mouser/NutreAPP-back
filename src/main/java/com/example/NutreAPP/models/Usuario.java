@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.example.NutreAPP.models.helpers.Departamentos;
 import com.example.NutreAPP.models.helpers.Rol;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
