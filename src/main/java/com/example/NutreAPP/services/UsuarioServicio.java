@@ -43,6 +43,16 @@ public Usuario modificar(UUID id, Usuario datos){
     usuarioEncontrado.setNombre(datos.getNombre());
     usuarioEncontrado.setRol(datos.getRol());
     return this.repositorio.save(usuarioEncontrado);
+    // Metodo para eliminar
+    public boolean eliminar(UUID id){
+        Optional<Usuario> usuarioBuscado = this.repositorio.findById(id);
+        if(!usuarioBuscado.isPresent()){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "id no encontrado");
+        }else{
+            this.repositorio.deleteById(id);
+            return true;
+        }
+    }
     // Metodo para buscar por depto y rol
     // Metodo para buscar por correo
     // Metodo para verificar correo
