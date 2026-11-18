@@ -1,10 +1,12 @@
 package com.example.NutreAPP.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.NutreAPP.models.Visualizacion;
 import com.example.NutreAPP.repositories.IVideoRepositorio;
 
+@Service
 public class VisualizacionServicio {
     @Autowired
     private IVideoRepositorio repositorio;
